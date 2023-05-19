@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SpaceBooks</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, inherit, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, inherit; 
+  background-color: white;
+  
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  color: black;
+  background-color: white;
+  height: 60px;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 20px;
+  position: fixed;
+  padding-bottom: 60px;
+
+}
+
+.sidenav {
+  height: 100%; 
+  width: 0;
+  position: fixed; 
+  z-index: 1;
+  top: 0; 
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav span:hover {
+  color: red;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+  padding-top: 80px;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; 
+  background-color: darkgray;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: darkgray;
+}
+
+.main{
+  padding-top: 100px ;
+}
+
+.container {
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  margin-top: 220px;
+}
+
+
+/* Style the content */
+
+.content {
+  height: 400px;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  float: left;
+  padding-top: 30px;
+}
+.content img {
+  height: 100%;
+}
+
+.content2 {
+  padding-left: 650px;
+  font-size: 30px;
+
+}
+  
+
+
+/* Style the footer */
+.footer {
+  background-color: white;
+
+ 
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <b>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;<i> SpaceBooks </span></i>
+  </b>
+   <img src="logo1.png" style="float:center;width:40px;height:40px;">
+  
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="kutz.html">Home</a>
+  <a href="Menu.html">Browse</a>
+  <a href="#">Contact Us</a>
+</div>
+
+<div id="main">
+
+<div class="content">
+  <img src="img/concern.jpg">
+</div>
+<div class="content2">
+  <h2> Guides and Concerns </h2>
+      <hr>
+      <p> Get advanced research assistance in dozens of subject areas. </p>
+</div>
+
+<div class="container">
+  <form method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="region">Region</label>
+    <select id="region" name="">
+      <option value="batangas">Batangas</option>
+      <option value="manila">Manila</option>
+      <option value="others">Others</option>
+    </select>
+
+    <label for="subject">Concern</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit" name="submit">
+    <?php
+
+      if(isset($_POST['submit'])) {
+          echo "Response Submitted";
+      }
+   
+    ?>
+  </form>
+</div>
+
+
+
+
+<div class="footer">
+ 
+  <p style=color:white;>wew</p>
+  <p style=color:white;>wew</p>
+  <p style=color:white;>wew</p>
+  <p><center><i>All rights reserved(2022)</i></center></p>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>
